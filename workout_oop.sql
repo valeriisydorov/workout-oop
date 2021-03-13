@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 12 2020 г., 15:21
+-- Время создания: Мар 13 2021 г., 12:30
 -- Версия сервера: 5.7.25
--- Версия PHP: 7.2.10
+-- Версия PHP: 7.1.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,13 +34,6 @@ CREATE TABLE `article` (
   `content` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `article`
---
-
-INSERT INTO `article` (`id`, `title`, `content`) VALUES
-(1, 'About me', 'I am a Professor at the Department of Mathematics, UCLA. I work in a number of mathematical areas, but primarily in harmonic analysis, PDE, geometric combinatorics, arithmetic combinatorics, analytic number theory, compressed sensing, and algebraic combinatorics.  I am part of the Analysis Group here at UCLA, and also an editor or associate editor at several mathematical journals. Here are  my papers and preprints, my books, and my research blog.\r\nI maintain a harmonic analysis mailing list and contributed to the DispersiveWiki project.  I used to maintain a harmonic analysis page for conferences and other links. Think you might know me from somewhere?  Here\'s how you can contact me.  If you are a representative of the media, please visit this page instead. This fallI am teaching Math 247A (Graduate complex analysis).');
-
 -- --------------------------------------------------------
 
 --
@@ -53,14 +46,6 @@ CREATE TABLE `review` (
   `content` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `review`
---
-
-INSERT INTO `review` (`id`, `author`, `content`) VALUES
-(1, 'Charles Fefferman', 'He’s wonderful. He’s as good as they come. There are a few in a generation, and he’s one of the few.'),
-(2, 'Dr. Fefferman', 'Terry has a style that very few have. When he solves the problem, you think to yourself, ‘This is so obvious and why didn’t I see it? Why didn’t the 100 distinguished people who thought about this before not think of it?’');
-
 -- --------------------------------------------------------
 
 --
@@ -72,13 +57,6 @@ CREATE TABLE `user` (
   `login` varchar(128) NOT NULL,
   `password` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `user`
---
-
-INSERT INTO `user` (`id`, `login`, `password`) VALUES
-(2, 'Terry Tao', '$2y$10$Yg49MtwlaPKGEEQyGC/nBe8glNo7.Rd0YF9Bc27aYFSAMR3Xd3HNC');
 
 --
 -- Индексы сохранённых таблиц
@@ -111,19 +89,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
